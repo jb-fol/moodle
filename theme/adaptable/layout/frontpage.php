@@ -68,15 +68,6 @@ if (!empty($PAGE->theme->settings->infobox)) {
     echo $OUTPUT->get_marketing_blocks();
 }
 
-if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
-    <div id="frontblockregion" class="container">
-        <div class="row-fluid">
-            <?php echo $OUTPUT->get_block_regions(); ?>
-        </div>
-    </div>
-<?php
-}
-
 // Infobox 2.
 if (!empty($PAGE->theme->settings->infobox2)) {
     if (!empty($PAGE->theme->settings->infoboxfullscreen)) {
@@ -106,6 +97,16 @@ if (!empty($PAGE->theme->settings->infobox2)) {
         <?php
         echo $OUTPUT->course_content_header();
         echo $OUTPUT->main_content();
+        
+        if (!empty($PAGE->theme->settings->frontpageblocksenabled)) { ?>
+    <div id="frontblockregion" class="container">
+        <div class="row-fluid">
+            <?php echo $OUTPUT->get_block_regions(); ?>
+        </div>
+    </div>
+<?php
+}
+        
         echo $OUTPUT->course_content_footer();
         ?>
     </section>
